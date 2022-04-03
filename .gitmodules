@@ -1,0 +1,3 @@
+[submodule "RaspberryPi/buildroot-externals"]
+	path = RaspberryPi/buildroot-externals
+	url = https://github.com/sirsipe/buildroot-externals
