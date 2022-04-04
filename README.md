@@ -31,7 +31,7 @@ The radio has 6 channels and 2 of them (knobs) will be utilized to access **flig
 
 ## Initial schematics
 
-![image](https://user-images.githubusercontent.com/15073095/161448298-353b0a0d-dd4c-41f2-b7bd-20a85002ef38.png)
+![image](/Docs/Schematics.png)
 
 
 ## Progress
@@ -52,7 +52,7 @@ The radio has 6 channels and 2 of them (knobs) will be utilized to access **flig
   - [x] Power from ESC
   - [ ] I2C slave mode
 
-![image](https://user-images.githubusercontent.com/15073095/161449555-4b064858-590e-402d-9d61-10f42c91e61d.png)
+![image](/Docs/PWM%20Routing.png)
 
 
 ## Unrelated picture
