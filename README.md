@@ -42,15 +42,15 @@ The radio has 6 channels and 2 of them (knobs) will be utilized to access **flig
     - [ ] Flight path recording 
   - [x] [Raylib](https://github.com/raysan5/raylib) working (for custom OSD)
   - [ ] OSD software base
-  - [ ] Master Ping -line
-  - [ ] I2C
+  - [x] Master Ping -line
+  - [x] I2C
     - [ ] GY-91 communication
   - [ ] Power from Trasmitter
 
 - [x] 6CH PWM signals from RC receiver for Arduino Pro Mini
   - [x] Re-route received signals to servo driver
   - [x] Power from ESC
-  - [ ] I2C slave mode
+  - [x] I2C slave mode
 
 ![image](/Docs/PWM%20Routing.png)
 
