@@ -27,30 +27,53 @@ The radio has 6 channels and 2 of them (knobs) will be utilized to access **flig
 - [Arduino Pro Mini 5v](https://www.adafruit.com/product/2378): _Power from ESC BEC_
 - [Raspberry Pi 0w](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) + [Camera](https://thepihut.com/products/zerocam-camera-for-raspberry-pi-zero): _According to [this page](https://raspi.tv/2017/how-much-power-does-pi-zero-w-use), current draw when recording video is around 230mA. In addition Beitian BN-880 GPS draws 50mA@5V, but it will be run at 3v3. Eachine TX5258 can supply 300mA so... not much playroom there :)_
 - [Beitian BN-880 GPS](https://uk.banggood.com/Beitian-BN-880-Flight-Control-GPS-Module-Dual-Module-Compass-With-Cable-for-RC-Drone-FPV-Racing-p-971082.html?cur_warehouse=CN): _Power from RPi (3v3)_
-- GY-91 (MPU9250+BMP280) 10-DOF sensor: _Power from ESC BEC_
+- GY-91 (MPU9250+BMP280) 10-DOF sensor: _Power from RPi (3v3)_
 
 ## Initial schematics
 
+**Note**: Picure is not up-to-date. *GY-91 (MPU9250+BMP280) 10-DOF sensor* is actually connected to 3v3 side of the I2C bus and gets powered by RPi's 3v3 line.
 ![image](/Docs/Schematics.png)
 
+## RPi Zero W install instructions
+
+    git clone https://github.com/sirsipe/TheUAVProject
+    cd TheUAVProject
+    git submodule init 
+    git submodule update
+    cd RaspberryPi/buildroot
+    make BR2_EXTERNAL=../buildroot-externals rpi0w-uav_defconfig
+    make menuconfig
+    
+Now at buildroot configuration, navigate down to `External options` and choose `cam-on-start`, `osd` and `osd-on-start`. You can also selected `rpi-wifi`, navigate inside it and configure the RPi for headless SSH access. Exit and save.
+
+    make
+
+The resulting image can be found from `output/images/sdcard.img`.
 
 ## Progress
 
 - [x] Custom Linux with Buildroot for RPi 0w
   - [x] Raspivid working
   - [x] GPS via UART working
-    - [ ] Flight path recording 
   - [x] [Raylib](https://github.com/raysan5/raylib) working (for custom OSD)
-  - [ ] OSD software base
+  - [x] OSD software base
+    - [ ] PWM from Arduino to servos
+      - [ ] Menu navigation using CH5/6
+        - [ ] Subsystem control (record/stop, flaps, auto-level, set home, return to home...) 
+    - [ ] GPS altitude & speed
+    - [ ] GPS flight path 
+    - [ ] Pitch, yaw, roll
   - [x] Master Ping -line
   - [x] I2C
     - [ ] GY-91 communication
-  - [ ] Power from Trasmitter
+  - [x] Power from Trasmitter
 
 - [x] 6CH PWM signals from RC receiver for Arduino Pro Mini
   - [x] Re-route received signals to servo driver
   - [x] Power from ESC
   - [x] I2C slave mode
+
+
 
 ![image](/Docs/PWM%20Routing.png)
 
