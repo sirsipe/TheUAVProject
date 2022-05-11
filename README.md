@@ -23,7 +23,7 @@ The radio has 6 channels and 2 of them (knobs) will be utilized to access **flig
   - Hobbyking radio + 6CH receiver
   - ESC with 5v BEC
 - FPV Transmitter: [Eachine TX5258](https://www.banggood.com/Eachine-TX5258-5_8G-72CH-25-or-200-or-500-or-800mW-Switchable-FPV-Transmitter-Support-OSD-Configuring-Smartaudio-p-1248768.html?imageAb=2&cur_warehouse=CN&akmClientCountry=FI): _Power from battery's balanced connector_
-- FPV Receiver: [Eachine VR D2 Pro](https://www.getfpv.com/eachine-vr-d2-pro-40ch-5-8g-diversity-fpv-goggles-with-dvr.html): _Power from ESC BEC_
+- FPV Receiver: [Eachine VR D2 Pro](https://www.getfpv.com/eachine-vr-d2-pro-40ch-5-8g-diversity-fpv-goggles-with-dvr.html)
 - [Arduino Pro Mini 5v](https://www.adafruit.com/product/2378): _Power from ESC BEC_
 - [Raspberry Pi 0w](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) + [Camera](https://thepihut.com/products/zerocam-camera-for-raspberry-pi-zero): _According to [this page](https://raspi.tv/2017/how-much-power-does-pi-zero-w-use), current draw when recording video is around 230mA. In addition Beitian BN-880 GPS draws 50mA@5V, but it will be run at 3v3. Eachine TX5258 can supply 300mA so... not much playroom there :)_
 - [Beitian BN-880 GPS](https://uk.banggood.com/Beitian-BN-880-Flight-Control-GPS-Module-Dual-Module-Compass-With-Cable-for-RC-Drone-FPV-Racing-p-971082.html?cur_warehouse=CN): _Power from RPi (3v3)_
@@ -31,7 +31,7 @@ The radio has 6 channels and 2 of them (knobs) will be utilized to access **flig
 
 ## Initial schematics
 
-![image](https://user-images.githubusercontent.com/15073095/161448298-353b0a0d-dd4c-41f2-b7bd-20a85002ef38.png)
+![image](/Docs/Schematics.png)
 
 
 ## Progress
@@ -42,17 +42,17 @@ The radio has 6 channels and 2 of them (knobs) will be utilized to access **flig
     - [ ] Flight path recording 
   - [x] [Raylib](https://github.com/raysan5/raylib) working (for custom OSD)
   - [ ] OSD software base
-  - [ ] Master Ping -line
-  - [ ] I2C
+  - [x] Master Ping -line
+  - [x] I2C
     - [ ] GY-91 communication
   - [ ] Power from Trasmitter
 
 - [x] 6CH PWM signals from RC receiver for Arduino Pro Mini
   - [x] Re-route received signals to servo driver
   - [x] Power from ESC
-  - [ ] I2C slave mode
+  - [x] I2C slave mode
 
-![image](https://user-images.githubusercontent.com/15073095/161449555-4b064858-590e-402d-9d61-10f42c91e61d.png)
+![image](/Docs/PWM%20Routing.png)
 
 
 ## Unrelated picture
